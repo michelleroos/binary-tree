@@ -12,6 +12,7 @@ class Node {
   }
 }
 
+// T: O(n) S: O(n)
 const depthFirstValues = (root) => {
   if (!root) return [];
   const left = depthFirstValues(root.left);

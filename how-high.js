@@ -8,13 +8,13 @@ The height of a binary tree is defined as the maximal number of edges from the r
 If the tree is empty, return -1.
 */
 
-// class Node {
-//   constructor(val) {
-//     this.val = val;
-//     this.left = null;
-//     this.right = null;
-//   }
-// }
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null;
+  }
+}
 
 const howHigh = (node) => {
   if (!node) return -1;
@@ -23,7 +23,6 @@ const howHigh = (node) => {
   return 1 + Math.max(left, right);
 };
 
-test_00:
 const a = new Node('a');
 const b = new Node('b');
 const c = new Node('c');
@@ -36,30 +35,16 @@ a.right = c;
 b.left = d;
 b.right = e;
 c.right = f;
-
 //      a
 //    /   \
 //   b     c
 //  / \     \
 // d   e     f
+console.log(howHigh(a)); 
+// -> 2
 
-howHigh(a); // -> 2
-test_01:
-const a = new Node('a');
-const b = new Node('b');
-const c = new Node('c');
-const d = new Node('d');
-const e = new Node('e');
-const f = new Node('f');
 const g = new Node('g');
-
-a.left = b;
-a.right = c;
-b.left = d;
-b.right = e;
-c.right = f;
 e.left = g
-
 //      a
 //    /   \
 //   b     c
@@ -67,24 +52,25 @@ e.left = g
 // d   e     f
 //    /
 //   g
+console.log(howHigh(a)); 
+// -> 3
 
-howHigh(a); // -> 3
-test_02:
-const a = new Node('a');
-const c = new Node('c');
+const p = new Node('p');
+const q = new Node('q');
 
-a.right = c;
+p.right = q;
 
-//      a
+//      p
 //       \
-//        c
+//        q
 
-howHigh(a); // -> 1
-test_03:
-const a = new Node('a');
+console.log(howHigh(p)); 
+// -> 1
 
-//      a
+const z = new Node('z');
+// z
+console.log(howHigh(z)); 
+// -> 0
 
-howHigh(a); // -> 0
-test_04:
-howHigh(null); // -> -1
+console.log(howHigh(null)); 
+// -> -1
